@@ -1,0 +1,52 @@
+name: test34
+display_name: "test34"
+entity_type: table
+physical_table: dw.claims_fact
+attributes:
+  - name: claim_id
+    type: string
+    attribute_type: key
+    is_primary_key: true
+    validation_type: not_null_unique
+  - name: member_id
+    type: string
+    attribute_type: key
+    pii_classification: pii
+    validation_type: not_null_unique
+  - name: provider_id
+    type: string
+    attribute_type: key
+    validation_type: not_null_unique
+  - name: procedure_code
+    type: string
+    attribute_type: dimension
+  - name: diagnosis_code
+    type: string
+    attribute_type: dimension
+  - name: billed_amount
+    type: decimal
+    attribute_type: measure
+  - name: paid_amount
+    type: decimal
+    attribute_type: measure
+  - name: allowed_amount
+    type: decimal
+    attribute_type: measure
+  - name: status
+    type: string
+    attribute_type: dimension
+  - name: denial_reason_code
+    type: string
+    attribute_type: dimension
+  - name: service_date
+    type: date
+    attribute_type: dimension
+  - name: submitted_at
+    type: timestamp
+    attribute_type: dimension
+  - name: payer_name
+    type: string
+    attribute_type: dimension
+  - name: plan_type
+    type: string
+    attribute_type: dimension
