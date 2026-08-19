@@ -1,0 +1,17 @@
+name: Final Canvas ETL
+description: ""
+runtime_engine: snowflake
+schedule: daily
+status: active
+source_model_id: 0afbc682-ed9d-4c3c-8f44-74b8ea50353a
+nodes:
+  - type: extract
+    label: "Read claims_fact"
+  - type: filter
+    label: "Business rules"
+  - type: transform
+    label: "PII masking"
+  - type: validate
+    label: "Quality check"
+  - type: load
+    label: "Write to Snowflake"
