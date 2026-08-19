@@ -1,0 +1,23 @@
+name: test25 - ETL Pipeline - ETL Pipeline
+description: "Auto-generated from model: test25 - ETL Pipeline. Destination: snowflake.analytics.test25_-_etl_pipeline"
+runtime_engine: snowflake
+schedule: daily
+status: active
+source_model_id: cb845dec-573b-4b9b-9b4a-b46c3f94c9c8
+nodes:
+  - type: extract
+    label: "Extract from sources"
+    count: 1
+  - type: filter
+    label: "Apply business rules"
+  - type: transform
+    label: "PII masking + computed"
+  - type: validate
+    label: "Quality validation"
+  - type: load
+    label: "Load to snowflake.analytics.test25_-_etl_pipeline"
+    count: 1
+triggers:
+  schedule: daily
+  cdc_enabled: true
+  git_push_enabled: true
