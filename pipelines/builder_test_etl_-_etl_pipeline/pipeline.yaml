@@ -1,0 +1,22 @@
+name: Builder Test ETL - ETL Pipeline
+description: "Auto-generated from model: Builder Test ETL. Destination: snowflake.analytics.builder_test_etl"
+runtime_engine: snowflake
+schedule: daily
+status: active
+source_model_id: 2a0dfe2d-b32d-4ea1-a2dc-43959212c0bd
+nodes:
+  - type: extract
+    label: "Extract from sources"
+  - type: filter
+    label: "Apply business rules"
+  - type: transform
+    label: "PII masking + computed"
+  - type: validate
+    label: "Quality validation"
+  - type: load
+    label: "Load to snowflake.analytics.builder_test_etl"
+    count: 1
+triggers:
+  schedule: daily
+  cdc_enabled: true
+  git_push_enabled: true
