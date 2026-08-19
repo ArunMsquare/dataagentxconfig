@@ -1,0 +1,18 @@
+name: Manual ETL - Salesforce to Snowflake
+description: "Manually created pipeline for CRM data sync"
+runtime_engine: snowflake
+schedule: every_6_hours
+status: active
+nodes:
+  - type: extract
+    label: "Read from Salesforce API"
+  - type: transform
+    label: "Clean & standardize"
+  - type: filter
+    label: "Filter active accounts"
+  - type: load
+    label: "Write to Snowflake"
+triggers:
+  schedule: every_6_hours
+  cdc_enabled: false
+  git_push_enabled: false
