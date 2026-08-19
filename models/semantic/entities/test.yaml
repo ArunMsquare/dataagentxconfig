@@ -1,0 +1,73 @@
+name: test
+display_name: "test"
+entity_type: table
+physical_table: dw.providers_dim
+attributes:
+  - name: provider_id
+    type: string
+    attribute_type: key
+    is_primary_key: true
+    validation_type: not_null_unique
+  - name: npi
+    type: string
+    attribute_type: key
+    validation_type: not_null_unique
+  - name: provider_name
+    type: string
+    attribute_type: dimension
+  - name: specialty
+    type: string
+    attribute_type: dimension
+  - name: provider_type
+    type: string
+    attribute_type: dimension
+  - name: state_code
+    type: string
+    attribute_type: dimension
+  - name: network_status
+    type: string
+    attribute_type: dimension
+  - name: tax_id
+    type: string
+    attribute_type: key
+    pii_classification: sensitive
+    validation_type: not_null_unique
+  - name: member_id
+    type: string
+    attribute_type: key
+    pii_classification: pii
+    validation_type: not_null_unique
+  - name: first_name
+    type: string
+    attribute_type: dimension
+    pii_classification: phi
+  - name: last_name
+    type: string
+    attribute_type: dimension
+    pii_classification: phi
+  - name: date_of_birth
+    type: date
+    attribute_type: dimension
+    pii_classification: phi
+  - name: gender
+    type: string
+    attribute_type: dimension
+  - name: state_code
+    type: string
+    attribute_type: dimension
+  - name: zip_code
+    type: string
+    attribute_type: dimension
+    pii_classification: pii
+  - name: plan_type
+    type: string
+    attribute_type: dimension
+  - name: enrollment_date
+    type: date
+    attribute_type: dimension
+  - name: termination_date
+    type: date
+    attribute_type: dimension
+  - name: is_active
+    type: boolean
+    attribute_type: dimension
