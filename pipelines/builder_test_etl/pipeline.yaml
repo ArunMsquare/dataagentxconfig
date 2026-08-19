@@ -1,0 +1,19 @@
+name: Builder Test ETL
+description: ""
+runtime_engine: snowflake
+schedule: daily
+status: active
+source_model_id: 32ab567b-b450-4832-89da-4a321c335725
+nodes:
+  - type: extract
+    label: "Read Claims"
+  - type: filter
+    label: "Business Rules"
+  - type: transform
+    label: "PII Masking"
+  - type: validate
+    label: "Quality Check"
+  - type: metrics
+    label: "Compute KPIs"
+  - type: load
+    label: "Write to Snowflake"
