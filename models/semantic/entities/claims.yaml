@@ -1,0 +1,8 @@
+name: claims
+display_name: "Claims"
+entity_type: table
+physical_table: dw.claims
+attributes:
+  - name: id
+    type: string
+    attribute_type: key
