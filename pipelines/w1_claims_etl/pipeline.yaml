@@ -1,0 +1,17 @@
+name: W1 Claims ETL
+description: "Workflow 1 pipeline"
+runtime_engine: snowflake
+schedule: daily
+status: active
+source_model_id: 34b655da-fb37-4e7e-96f7-0b9a5c2746ec
+nodes:
+  - type: extract
+    label: "Extract claims_fact"
+  - type: filter
+    label: "Exclude voided"
+  - type: transform
+    label: "Mask member_id"
+  - type: metrics
+    label: "Compute denial_rate"
+  - type: load
+    label: "Load to snowflake.analytics"
