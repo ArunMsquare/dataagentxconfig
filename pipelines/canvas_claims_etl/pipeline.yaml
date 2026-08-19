@@ -1,0 +1,29 @@
+name: Canvas Claims ETL
+description: "Dest: snowflake.analytics.canvas_claims"
+runtime_engine: snowflake
+schedule: daily
+status: active
+source_model_id: fc2517dc-9292-4094-a758-0b1103dc435d
+nodes:
+  - type: extract
+    label: "Read dw.claims_fact"
+    count: 1
+  - type: filter
+    label: "Exclude voided claims"
+    count: 1
+  - type: transform
+    label: "Hash member_id (PII)"
+    count: 1
+  - type: validate
+    label: "Check not_null: paid_amount"
+    count: 1
+  - type: metrics
+    label: "Compute denial_rate"
+    count: 1
+  - type: load
+    label: "Write to snowflake.analytics.canvas_claims"
+    count: 1
+triggers:
+  schedule: daily
+  cdc_enabled: true
+  git_push_enabled: false
