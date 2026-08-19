@@ -1,0 +1,26 @@
+name: Canvas Test Model - ETL Pipeline
+description: "Auto-generated from model: Canvas Test Model. Destination: snowflake.analytics.canvas_test_model"
+runtime_engine: snowflake
+schedule: daily
+status: active
+source_model_id: fc2517dc-9292-4094-a758-0b1103dc435d
+nodes:
+  - type: extract
+    label: "Extract from sources"
+    count: 1
+  - type: filter
+    label: "Apply business rules"
+  - type: transform
+    label: "PII masking + computed"
+  - type: validate
+    label: "Quality validation"
+  - type: metrics
+    label: "Compute metrics"
+    count: 1
+  - type: load
+    label: "Load to snowflake.analytics.canvas_test_model"
+    count: 1
+triggers:
+  schedule: daily
+  cdc_enabled: true
+  git_push_enabled: true
