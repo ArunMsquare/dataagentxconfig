@@ -1,0 +1,24 @@
+name: w1_claims
+display_name: "Claims"
+entity_type: table
+physical_table: dw.claims_fact
+attributes:
+  - name: claim_id
+    type: string
+    attribute_type: key
+    is_primary_key: true
+    validation_type: not_null_unique
+  - name: member_id
+    type: string
+    attribute_type: key
+    pii_classification: pii
+    masking_method: hash
+  - name: paid_amount
+    type: decimal
+    attribute_type: measure
+  - name: status
+    type: string
+    attribute_type: dimension
+business_rules:
+  - type: filter
+    condition: "status != 'voided'"
