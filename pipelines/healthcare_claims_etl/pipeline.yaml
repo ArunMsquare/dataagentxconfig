@@ -1,0 +1,32 @@
+name: Healthcare Claims ETL
+description: "Auto-generated from Healthcare Claims v2 model. Destination: snowflake.analytics.healthcare_claims"
+runtime_engine: snowflake
+schedule: daily
+status: active
+source_model_id: 655dcb74-cfea-4764-8183-4ac8b315e6c7
+nodes:
+  - type: extract
+    label: "Extract from dw.claims_fact + dw.members_dim"
+    count: 2
+  - type: join
+    label: "Join claims → members on member_id"
+    count: 1
+  - type: filter
+    label: "Apply: status != voided, amount >= 0"
+    count: 2
+  - type: transform
+    label: "PII mask: member_id(hash), names(partial)"
+    count: 3
+  - type: validate
+    label: "Not null: claim_id, paid_amount, service_date"
+    count: 3
+  - type: metrics
+    label: "Compute: denial_rate, total_paid_claims"
+    count: 2
+  - type: load
+    label: "Load to snowflake.analytics.healthcare_claims"
+    count: 1
+triggers:
+  schedule: daily
+  cdc_enabled: true
+  git_push_enabled: true
