@@ -1,0 +1,12 @@
+name: final_claims
+display_name: "Final Claims"
+entity_type: table
+physical_table: dw.claims_fact
+attributes:
+  - name: claim_id
+    type: string
+    attribute_type: key
+    is_primary_key: true
+  - name: amount
+    type: decimal
+    attribute_type: measure
