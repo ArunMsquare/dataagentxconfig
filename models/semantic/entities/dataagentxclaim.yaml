@@ -1,0 +1,43 @@
+name: dataagentxclaim
+display_name: "dataagentxclaim"
+entity_type: table
+physical_table: DATAAGENTX.SEMANTIC.CLAIMS_FACT_10M
+attributes:
+  - name: CLAIM_ID
+    type: string
+    attribute_type: key
+    is_primary_key: true
+    validation_type: not_null_unique
+  - name: MEMBER_ID
+    type: string
+    attribute_type: key
+    pii_classification: pii
+    validation_type: not_null_unique
+  - name: PROVIDER_ID
+    type: string
+    attribute_type: key
+    validation_type: not_null_unique
+  - name: PAID_AMOUNT
+    type: string
+    attribute_type: measure
+  - name: BILLED_AMOUNT
+    type: string
+    attribute_type: measure
+  - name: STATUS
+    type: string
+    attribute_type: dimension
+  - name: PAYER_NAME
+    type: string
+    attribute_type: dimension
+  - name: PLAN_TYPE
+    type: string
+    attribute_type: dimension
+  - name: SERVICE_DATE
+    type: date
+    attribute_type: dimension
+  - name: LOADED_AT
+    type: timestamp
+    attribute_type: dimension
+  - name: test
+    type: string
+    attribute_type: dimension
