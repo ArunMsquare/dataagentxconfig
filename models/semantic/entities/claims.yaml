@@ -1,8 +1,23 @@
 name: claims
 display_name: "Claims"
 entity_type: table
-physical_table: dw.claims
+physical_table: SEMANTIC.claims_fact
 attributes:
-  - name: id
+  - name: claim_id
     type: string
     attribute_type: key
+  - name: member_id
+    type: string
+    attribute_type: key
+  - name: paid_amount
+    type: decimal
+    attribute_type: measure
+  - name: status
+    type: string
+    attribute_type: dimension
+  - name: payer_name
+    type: string
+    attribute_type: dimension
+business_rules:
+  - type: filter
+    condition: "status != 'voided'"
