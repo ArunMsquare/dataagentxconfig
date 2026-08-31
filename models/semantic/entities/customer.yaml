@@ -1,0 +1,14 @@
+name: customer
+display_name: ""
+entity_type: table
+physical_table: customer
+attributes:
+  - name: c_custkey
+    type: integer
+    attribute_type: key
+  - name: c_name
+    type: string
+    attribute_type: dimension
+  - name: c_mktsegment
+    type: string
+    attribute_type: dimension
