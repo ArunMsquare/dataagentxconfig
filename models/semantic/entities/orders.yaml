@@ -1,0 +1,17 @@
+name: orders
+display_name: ""
+entity_type: table
+physical_table: orders
+attributes:
+  - name: o_orderkey
+    type: integer
+    attribute_type: key
+  - name: o_custkey
+    type: integer
+    attribute_type: dimension
+  - name: o_orderstatus
+    type: string
+    attribute_type: dimension
+  - name: o_totalprice
+    type: decimal
+    attribute_type: measure
