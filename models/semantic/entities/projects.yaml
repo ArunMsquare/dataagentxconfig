@@ -7,9 +7,6 @@ attributes:
   - name: project_id
     type: string
     attribute_type: dimension
-  - name: name
-    type: string
-    attribute_type: dimension
   - name: budget
     type: decimal
     attribute_type: dimension
