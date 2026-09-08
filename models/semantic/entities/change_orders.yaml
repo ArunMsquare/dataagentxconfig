@@ -1,6 +1,6 @@
 name: change_orders
 display_name: "Change Orders"
-description: "Change orders and their approval status."
+description: "Change orders and approval status."
 entity_type: table
 physical_table: construction_360.change_orders
 attributes:
