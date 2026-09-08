@@ -1,0 +1,18 @@
+name: change_orders
+display_name: "Change Orders"
+description: "Change orders and their approval status."
+entity_type: table
+physical_table: construction_360.change_orders
+attributes:
+  - name: change_order_id
+    type: string
+    attribute_type: dimension
+  - name: project_id
+    type: string
+    attribute_type: dimension
+  - name: amount
+    type: decimal
+    attribute_type: dimension
+  - name: approved
+    type: boolean
+    attribute_type: dimension
