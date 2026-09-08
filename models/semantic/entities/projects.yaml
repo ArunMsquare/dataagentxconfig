@@ -1,0 +1,21 @@
+name: projects
+display_name: "Projects"
+description: "Construction projects with budget and schedule."
+entity_type: table
+physical_table: construction_360.projects
+attributes:
+  - name: project_id
+    type: string
+    attribute_type: dimension
+  - name: name
+    type: string
+    attribute_type: dimension
+  - name: budget
+    type: decimal
+    attribute_type: dimension
+  - name: actual_cost
+    type: decimal
+    attribute_type: dimension
+  - name: status
+    type: string
+    attribute_type: dimension
