@@ -1,0 +1,27 @@
+name: market_risk_conditions
+display_name: "Market & Risk Conditions"
+description: "Market and macro risk conditions per project."
+entity_type: table
+physical_table: workspace.default.market_risk_conditions
+attributes:
+  - name: project_id
+    type: string
+    attribute_type: dimension
+  - name: region
+    type: string
+    attribute_type: dimension
+  - name: market_volatility_index
+    type: decimal
+    attribute_type: dimension
+  - name: material_cost_trend
+    type: string
+    attribute_type: dimension
+  - name: demand_outlook
+    type: string
+    attribute_type: dimension
+  - name: risk_level
+    type: string
+    attribute_type: dimension
+  - name: assessed_at
+    type: timestamp
+    attribute_type: dimension
