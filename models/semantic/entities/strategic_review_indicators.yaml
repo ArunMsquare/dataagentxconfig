@@ -1,0 +1,27 @@
+name: strategic_review_indicators
+display_name: "Strategic Review Indicators"
+description: "Ankura strategic review signals per project."
+entity_type: table
+physical_table: workspace.default.strategic_review_indicators
+attributes:
+  - name: project_id
+    type: string
+    attribute_type: dimension
+  - name: project_name
+    type: string
+    attribute_type: dimension
+  - name: strategic_fit_score
+    type: decimal
+    attribute_type: dimension
+  - name: portfolio_priority
+    type: string
+    attribute_type: dimension
+  - name: executive_sponsor
+    type: string
+    attribute_type: dimension
+  - name: review_status
+    type: string
+    attribute_type: dimension
+  - name: reviewed_at
+    type: timestamp
+    attribute_type: dimension
