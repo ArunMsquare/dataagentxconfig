@@ -1,0 +1,27 @@
+name: physical_logistical_constraints
+display_name: "Physical & Logistical Constraints"
+description: "Site, supply-chain and logistics constraints per project."
+entity_type: table
+physical_table: workspace.default.physical_logistical_constraints
+attributes:
+  - name: project_id
+    type: string
+    attribute_type: dimension
+  - name: site_access_rating
+    type: string
+    attribute_type: dimension
+  - name: supply_chain_lead_days
+    type: int
+    attribute_type: dimension
+  - name: equipment_availability
+    type: string
+    attribute_type: dimension
+  - name: weather_exposure
+    type: string
+    attribute_type: dimension
+  - name: logistics_risk_score
+    type: decimal
+    attribute_type: dimension
+  - name: assessed_at
+    type: timestamp
+    attribute_type: dimension
