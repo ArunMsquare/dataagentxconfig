@@ -1,0 +1,27 @@
+name: operational_execution_risks
+display_name: "Operational & Execution Risks"
+description: "Schedule, cost and execution risk signals per project."
+entity_type: table
+physical_table: workspace.default.operational_execution_risks
+attributes:
+  - name: project_id
+    type: string
+    attribute_type: dimension
+  - name: schedule_variance_days
+    type: int
+    attribute_type: dimension
+  - name: cost_overrun_pct
+    type: decimal
+    attribute_type: dimension
+  - name: open_change_orders
+    type: int
+    attribute_type: dimension
+  - name: safety_incidents
+    type: int
+    attribute_type: dimension
+  - name: execution_risk_score
+    type: decimal
+    attribute_type: dimension
+  - name: assessed_at
+    type: timestamp
+    attribute_type: dimension
